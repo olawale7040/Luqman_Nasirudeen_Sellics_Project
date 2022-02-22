@@ -1,8 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "src/components/styles/GlobalStyles";
-import Header from "./components/Header";
-import { Container } from "./components/styles/Container.styled";
-import { Button } from "./components/styles/Button.styled";
+import HomePage from "./pages/Home";
+
 const theme = {
   colors: {
     header: "#ebfbff",
@@ -16,12 +15,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <div>
-        <Header />
-        <Container>
-          <Button>Approve Image</Button>
-        </Container>
-      </div>
+      <HomePage />
     </ThemeProvider>
   );
 };

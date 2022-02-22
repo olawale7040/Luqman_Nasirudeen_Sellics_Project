@@ -15,7 +15,7 @@ export const StyledHeader = styled.header`
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   flex-grow: 1;
   padding: 20px;
@@ -23,6 +23,7 @@ export const Nav = styled.nav`
   & > div {
     color: #0781f2;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 17px;
+    text-transform: uppercase;
   }
 `;

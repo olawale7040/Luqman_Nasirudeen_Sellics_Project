@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  max-width: 800px;
-  text-align: center;
-  margin: 120px auto;
+  display: ${({ display }) => display || ""};
+  justify-content: ${({ justifyContent }) => justifyContent || ""};
+  margin: ${({ margin }) => margin || "0px"};
+  margin-bottom: ${({ mb }) => mb || "0px"};
+  margin-top: ${({ mt }) => mt || "0px"};
+  align-items: ${({ alignItems }) => alignItems || ""};
+  width: ${({ width }) => width || ""};
+  height: ${({ height }) => height || ""};
 `;

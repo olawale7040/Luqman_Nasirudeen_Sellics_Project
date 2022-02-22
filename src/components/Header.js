@@ -3,7 +3,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <Nav>
-        <div>Sellics Photo Approval</div>
+        <div>Image Approval Application</div>
       </Nav>
     </StyledHeader>
   );
