@@ -1,9 +1,9 @@
 import { StyledHeader, Nav } from "./styles/Header.styled";
 const Header = () => {
   return (
-    <StyledHeader>
+    <StyledHeader data-testid="app-header">
       <Nav>
-        <div>Image Approval Application</div>
+        <div data-testid="header-brand-name">IMAGE APPROVAL APPLICATION</div>
       </Nav>
     </StyledHeader>
   );

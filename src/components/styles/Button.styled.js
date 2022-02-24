@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  border-radius: 3px;
   padding: 13px 18px;
   font-size: 14px;
   line-height: 100%;
@@ -9,6 +8,7 @@ export const Button = styled.button`
   font-weight: 500;
   font-style: normal;
   cursor: pointer;
+  border-radius: 33px;
   background-color: ${({ bg }) => bg || "#0781f2"};
   color: ${({ color }) => color || "#fdfdfd"};
   width: ${({ width }) => width || ""};

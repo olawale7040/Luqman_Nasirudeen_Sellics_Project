@@ -1,11 +1,6 @@
-import axios from "axios";
+// import axios from "axios";
 import { createSlice } from "@reduxjs/toolkit";
 import { APPROVED_PHOTO } from "src/constant";
-
-const myKey = "1QmRkbFCLwa1ZVncNxiyD9XdMk1cAHdnnawmsnk6Dx8";
-const apiKey = process.env.REACT_APP_API_KEY
-  ? process.env.REACT_APP_API_KEY
-  : myKey;
 
 const initialState = {
   randomPhotos: [],
@@ -36,20 +31,6 @@ const slice = createSlice({
 });
 
 export const reducer = slice.reducer;
-export const { updatePhotos } = slice.actions;
+export const { updatePhotos, fetchRandomPhotos } = slice.actions;
 
 export default slice;
-
-// Fetch Random Photos
-export const fetchRandomPhotos = () => async (dispatch) => {
-  try {
-    const response = await axios.get(
-      `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=30`
-    );
-    if (response.status === 200) {
-      dispatch(slice.actions.fetchRandomPhotos(response.data));
-    }
-  } catch (err) {
-    return err.message;
-  }
-};
