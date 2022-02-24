@@ -1,4 +1,3 @@
-// import axios from "axios";
 import { createSlice } from "@reduxjs/toolkit";
 import { APPROVED_PHOTO } from "src/constant";
 

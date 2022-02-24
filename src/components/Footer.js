@@ -1,6 +1,6 @@
 import { Button } from "src/components/styles/Button.styled";
 import { FooterStyled } from "src/components/styles/Footer.styled";
-// Contact
+// Constant
 import { APPROVED_PHOTO, REJECT_PHOTO } from "src/constant";
 
 const Footer = ({ handleUpdatePhoto, isImage }) => {

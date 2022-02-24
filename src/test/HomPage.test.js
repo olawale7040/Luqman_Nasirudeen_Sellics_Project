@@ -33,7 +33,6 @@ describe("Home component test", () => {
   });
 
   test("Dispatch random photos to the store", async () => {
-    jest.spyOn(React, "useEffect").mockImplementation((f) => f());
     store.dispatch(fetchRandomPhotos(photosSample));
     const { getByTestId, queryByTestId } = renderComponent(<HomePage />);
     // Assert array of random photos in the store
@@ -47,7 +46,6 @@ describe("Home component test", () => {
   });
 
   test("Should display image when plus button is clicked", async () => {
-    jest.spyOn(React, "useEffect").mockImplementation((f) => f());
     store.dispatch(fetchRandomPhotos(photosSample));
     const { getByTestId } = renderComponent(<HomePage />);
 

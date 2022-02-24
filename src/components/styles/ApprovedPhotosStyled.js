@@ -14,18 +14,10 @@ export const ApprovedPhotosStyled = styled.div`
   }
   & > section {
     gap: 8px;
-    button {
-      background: black;
-      border: solid 4px white;
-      height: 20px;
-    }
     & > div {
-      & > div {
-        border: solid 2px red;
-        position: ${(props) => (props["data-arrow"] ? "absolute" : "")};
-        top: ${(props) => (props["data-arrow"] ? "16px" : "")};
-      }
+      position: relative;
     }
+
     img {
       margin-right: 8px;
     }
