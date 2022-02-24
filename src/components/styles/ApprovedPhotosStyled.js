@@ -11,9 +11,17 @@ export const ApprovedPhotosStyled = styled.div`
     text-align: left;
     text-transform: uppercase;
     margin-bottom: 12px;
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      text-align: center;
+    }
   }
   & > section {
     gap: 8px;
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
     & > div {
       position: relative;
     }

@@ -24,3 +24,18 @@ export const Divider = styled.div`
   margin-bottom: ${({ mb }) => mb || "0px"};
   margin-top: ${({ mt }) => mt || "0px"};
 `;
+
+export const ImageContainer = styled.div`
+  position: relative;
+  width: ${({ width }) => width || ""};
+  height: ${({ height }) => height || ""};
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: ${({ xsWidth }) => xsWidth || ""};
+  }
+  & > div {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+`;

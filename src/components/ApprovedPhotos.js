@@ -1,8 +1,8 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import { ApprovedPhotosStyled } from "./styles/ApprovedPhotosStyled";
 import { Image } from "src/components/styles/Image.styled";
 import { AddPhotoStyled } from "./styles/AddPhotoStyled";
+import { ImageContainer } from "./styles/Container.styled";
 import {
   BackSliderButton,
   NextSliderButton,
@@ -18,6 +18,12 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 
 const ApprovedPhotos = ({ handleShowImage }) => {
   const { approvedPhotos } = useSelector((state) => state.imageList);
+
+  const isMobile = () => {
+    const isMobile = window?.matchMedia("only screen and (max-width: 760px)");
+    return isMobile.matches ? true : false;
+  };
+
   return (
     <ApprovedPhotosStyled>
       <div data-testid="section-title">
@@ -38,10 +44,10 @@ const ApprovedPhotos = ({ handleShowImage }) => {
       ) : (
         <section data-testid="approved-photos">
           <CarouselProvider
-            naturalSlideWidth={700}
-            naturalSlideHeight={500}
-            visibleSlides={7}
-            step={7}
+            naturalSlideWidth={!isMobile() ? 700 : 500}
+            naturalSlideHeight={!isMobile() ? 500 : 120}
+            visibleSlides={!isMobile() ? 7 : 1}
+            step={!isMobile() ? 7 : 1}
             totalSlides={approvedPhotos.length}
           >
             <BackSliderButton>
@@ -52,12 +58,18 @@ const ApprovedPhotos = ({ handleShowImage }) => {
             <Slider>
               {approvedPhotos.map((photo) => (
                 <Slide key={photo.id}>
-                  <Image
-                    src={photo.urls.regular}
-                    key={photo.id}
-                    width="78px"
-                    height="60px"
-                  />
+                  <ImageContainer width="78px" height="60px" xsWidth="100%">
+                    <Image
+                      src={photo.urls.regular}
+                      key={photo.id}
+                      width="78px"
+                      height="60px"
+                      xsWidth="100%"
+                    />
+                    <div>
+                      <img src="/img/check.svg" alt="" />
+                    </div>
+                  </ImageContainer>
                 </Slide>
               ))}
             </Slider>

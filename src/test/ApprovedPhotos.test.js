@@ -15,6 +15,15 @@ import { photosSample, updatePhotoSample } from "src/constant/samplesData";
 describe("ApprovedPhotos component test", () => {
   const handleShowImage = jest.fn();
 
+  beforeEach(() => {
+    window.matchMedia = jest.fn().mockImplementation((query) => ({
+      matches: query !== "(min-width: 240px) and (max-width: 767px)",
+      media: "",
+      onchange: null,
+      addListener: jest.fn(),
+      removeListener: jest.fn(),
+    }));
+  });
   afterEach(cleanup);
   const renderComponent = (component) =>
     render(
@@ -47,9 +56,9 @@ describe("ApprovedPhotos component test", () => {
 
   //   Should display list of approved -photos
   test("Should display list of approved -photos", async () => {
-    jest.spyOn(React, "useEffect").mockImplementation((f) => f());
     store.dispatch(fetchRandomPhotos(photosSample));
     store.dispatch(updatePhotos(updatePhotoSample));
+
     const { getByTestId } = renderComponent(
       <ApprovedPhotos handleShowImage={handleShowImage} />
     );
